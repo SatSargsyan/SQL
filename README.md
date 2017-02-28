@@ -1,28 +1,29 @@
 # SQL
 
-
 Fill in the missing keyword to list the table names.
 Show Tables
 
 
 
-The WHERE Statement
+###The WHERE Statement
 
 The WHERE clause is used to extract only those records that fulfill a specified criterion.
 
 The syntax for the WHERE clause:
+```C#
 SELECT column_list 
 FROM table_name
 WHERE condition;
-
+```
 Consider the following table:
 nkar sql1
 
 
 In the above table, to SELECT a specific record:
+```C#
 SELECT * FROM customers
 WHERE ID = 7;
-
+```
 nkar sql2
 
 ###SQL Operators
@@ -34,9 +35,10 @@ The following comparison operators can be used in the WHERE clause:
 nkar sql3
 
 For example, we can display all customers names listed in our table, with the exception of the one with ID 5.
+```C#
 SELECT * FROM customers
 WHERE ID != 5;
-
+```
 nkar sql4
 
 As you can see, the record with ID=5 is excluded from the list.
@@ -47,14 +49,16 @@ As you can see, the record with ID=5 is excluded from the list.
 The BETWEEN operator selects values within a range. The first value must be lower bound and the second value, the upper bound.
 
 The syntax for the BETWEEN clause is as follows:
+```C#
 SELECT column_name(s)
 FROM table_name
 WHERE column_name BETWEEN value1 AND value2;
-
+```
 The following SQL statement selects all records with IDs that fall between 3 and 7:
+```C#
 SELECT * FROM customers 
 WHERE ID BETWEEN 3 AND 7;
-
+```
 nkar sql5
 
 ###Text Values
@@ -83,10 +87,11 @@ If you want to select rows that satisfy all of the given conditions, use the log
 nkar sql8
 
 To find the names of the customers between 30 to 40 years of age, set up the query as seen here:
+```C#
 SELECT ID, FirstName, LastName, Age
 FROM customers
 WHERE Age >= 30 AND Age <= 40;
-
+```
 This results in the following output:
 
 nkar sql9
@@ -101,9 +106,10 @@ nkar 10
 
 
 For example, if you want to find the customers who live either in New York or Chicago, the query would like this:
+```C#
 SELECT * FROM customers 
 WHERE City = 'New York' OR City = 'Chicago';
-
+```
 Result:
 nkar 11
 
@@ -119,10 +125,11 @@ Consider the following table:
 nkar 12
 
 The statement below selects all customers from the city "New York" AND with the age equal to "30" OR “35":
+```C#
 SELECT * FROM customers
 WHERE City = 'New York'
 AND (Age=30 OR Age=35);
-
+```
 Result:
 nkar13
 
@@ -130,30 +137,33 @@ nkar13
 You can nest as many conditions as you need.
 
 Fill in the blanks to select customers whose ids are either 1 or 2, and whose city is ''Boston''.
+```C#
 SELECT * FROM customers
 WHERE (id = 1 OR  id = 2)
 AND city = 'Boston'
-
+```
 ###The IN Operator
 
 The IN operator is used when you want to compare a column with more than one value. 
 
 For example, you might need to select all customers from New York, Los Angeles, and Chicago.
 With the OR condition, your SQL would look like this:
+```C#
 SELECT * FROM customers 
 WHERE City = 'New York'
 OR City = 'Los Angeles'
 OR City = 'Chicago';
-
+```
 Result:
 nkar 15
 
 ###The IN Operator
 
 You can achieve the same result with a single IN condition, instead of the multiple OR conditions:
+```C#
 SELECT * FROM customers 
 WHERE City IN ('New York', 'Los Angeles', 'Chicago');
-
+```
 This would also produce the same result:
 nkar 16
 Note the use of parentheses in the syntax.
@@ -164,9 +174,10 @@ Note the use of parentheses in the syntax.
 The NOT IN operator allows you to exclude a list of specific values from the result set. 
 
 If we add the NOT keyword before IN in our previous query, customers living in those cities will be excluded:
+```C#
 SELECT * FROM customers 
 WHERE City NOT IN ('New York', 'Los Angeles', 'Chicago');
-
+```
 Result:
 nkar 17
 
@@ -175,7 +186,9 @@ nkar 17
 The CONCAT function is used to concatenate two or more text values and returns the concatenating string.
 
 Let's concatenate the FirstName with the City, separating them with a comma:
+```C#
 SELECT CONCAT(FirstName, ', ' , City) FROM customers;
+```
 
 The output result is:
 nkar 18
@@ -184,9 +197,9 @@ nkar 18
 
 A concatenation results in a new column. The default column name will be the CONCAT function.
 You can assign a custom name to the resulting column using the AS keyword:
-SELECT CONCAT(FirstName,', ', City) AS new_column 
+```C#SELECT CONCAT(FirstName,', ', City) AS new_column 
 FROM customers;
-
+```
 And when you run the query, the column name appears to be changed.
 nkar 19
 
