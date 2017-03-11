@@ -530,20 +530,22 @@ Consider the following table called "Employees":
 nkar
 
 To update John's salary, we can use the following query:
+```C#
 UPDATE Employees 
 SET Salary=5000
 WHERE ID=1;
-
+```
 Result:
 nkar
 
 ###Updating Multiple Columns
 
 It is also possible to UPDATE multiple columns at the same time by comma-separating them:
+``C#
 UPDATE Employees 
 SET Salary=5000, FirstName='Robert'
 WHERE ID=1;
-
+```
 Result:
 nkar
 You can specify the column order any way you like in the SET clause.
@@ -551,13 +553,15 @@ You can specify the column order any way you like in the SET clause.
 Deleting Data
 
 The DELETE statement is used to remove data from your table. DELETE queries work much like UPDATE queries.
+```C#
 DELETE FROM table_name
 WHERE condition; 
-
+```
 For example, you can delete a specific employee from the table:
+```C#
 DELETE FROM Employees
 WHERE ID=1;
-
+```
 Result:
 nkar
 If you omit the WHERE clause, all records in the table will be deleted!
@@ -594,6 +598,7 @@ Note the parentheses in the syntax.
 Assume that you want to create a table called "Users" that consists of four columns: UserID, LastName, FirstName, and City.
 
 Use the following CREATE TABLE statement:
+```C#
 CREATE TABLE Users
 (
    UserID int,
@@ -601,7 +606,7 @@ CREATE TABLE Users
    LastName varchar(100),
    City varchar(100)
 ); 
-
+```
 varchar is the datatype that stores characters. You specify the number of characters in the parentheses after the type. So in the example above, our fields can hold max 100 characters long text.
 
 Data Types
