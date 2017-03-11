@@ -638,6 +638,7 @@ Primary Key
 
 The UserID is the best choice for our Users table's primary key.
 Define it as a primary key during table creation, using the PRIMARY KEY keyword.
+```C#
 CREATE TABLE Users
 (
    UserID int,
@@ -646,7 +647,7 @@ CREATE TABLE Users
    City varchar(100),
    PRIMARY KEY(UserID)
 ); 
-
+```
 Specify the column name in the parentheses of the PRIMARY KEY keyword.
 
 Now, when we run the query, our table will be created in the database.
@@ -685,13 +686,14 @@ PRIMARY KEY (UserID)
 Using Constraints
 
 The example below demonstrates how to create a table using constraints.
+```C#
 CREATE TABLE Users (
 id int NOT NULL AUTO_INCREMENT,
 username varchar(40) NOT NULL, 
 password varchar(10) NOT NULL,
 PRIMARY KEY(id)
 );
-
+```
 The following SQL enforces that the "id", "username", and "password" columns do not accept NULL values. We also define the "id" column to be an auto-increment primary key field. 
 
 Here is the result:
@@ -758,21 +760,23 @@ Views allow us to:
 - Summarize data from various tables and use it to generate reports.
 
 To create a view:
+```C#
 CREATE VIEW view_name AS
 SELECT column_name(s)
 FROM table_name
 WHERE condition;
-
+```
 The SELECT query can be as complex as you need it to be. It can contain multiple JOINS and other commands.
 
 Consider the Employees table, which contains the following records:
 nkar
 
 Let's create a view that displays each employee's FirstName and Salary.
+```C#
 CREATE VIEW List AS
 SELECT FirstName, Salary
 FROM  Employees;
-
+```
 Now, you can query the List view as you would query an actual table.
 SELECT * FROM List;
 
@@ -791,14 +795,16 @@ FROM table_name
 WHERE condition;
 
 The example below updates our List view to select also the LastName:
+```C#
 CREATE OR REPLACE VIEW List AS
 SELECT FirstName, LastName, Salary
 FROM  Employees;
-
+```
 Result:
 nkar
 You can delete a view with the DROP VIEW command.
+```C#
 DROP VIEW List;
-
+```
 
 
