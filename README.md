@@ -76,13 +76,13 @@ WHERE City = 'New York';
 ####Logical operators can be used to combine two Boolean values and return a result of true, false, or null.
 The following operators can be used:
 
-nkar sql7
+![sql7](https://cloud.githubusercontent.com/assets/25159667/24046301/8a02939c-0b3b-11e7-831c-00777afa11e6.JPG)
 
 When retrieving data using a SELECT statement, use logical operators in the WHERE clause to combine multiple conditions.
 
 If you want to select rows that satisfy all of the given conditions, use the logical operator, AND.
 
-nkar sql8
+![sql8](https://cloud.githubusercontent.com/assets/25159667/24046304/8e9d5e64-0b3b-11e7-8845-b2b62daccf65.JPG)
 
 To find the names of the customers between 30 to 40 years of age, set up the query as seen here:
 ```C#
@@ -92,7 +92,7 @@ WHERE Age >= 30 AND Age <= 40;
 ```
 This results in the following output:
 
-nkar sql9
+![sql9](https://cloud.githubusercontent.com/assets/25159667/24046316/9ab7cfe0-0b3b-11e7-9569-fce791de3603.JPG)
 
 You can combine as many conditions as needed to return the desired results.
 ###OR
@@ -100,8 +100,8 @@ You can combine as many conditions as needed to return the desired results.
 If you want to select rows that satisfy at least one of the given conditions, you can use the logical OR operator.
 
 The following table describes how the logical OR operator functions:
-nkar 10
 
+![sql10](https://cloud.githubusercontent.com/assets/25159667/24046317/9d005204-0b3b-11e7-97c8-c95e955326e6.JPG)
 
 For example, if you want to find the customers who live either in New York or Chicago, the query would like this:
 ```C#
@@ -109,7 +109,7 @@ SELECT * FROM customers
 WHERE City = 'New York' OR City = 'Chicago';
 ```
 Result:
-nkar 11
+![sql11](https://cloud.githubusercontent.com/assets/25159667/24046322/a0497db4-0b3b-11e7-9717-9fca7f4952b9.JPG)
 
 ###Combining AND & OR
 
@@ -120,7 +120,7 @@ When combining these conditions, it is important to use parentheses, so that the
 
 Consider the following table:
 
-nkar 12
+![sql12](https://cloud.githubusercontent.com/assets/25159667/24046327/a394b25e-0b3b-11e7-9876-e2d94150b03a.JPG)
 
 The statement below selects all customers from the city "New York" AND with the age equal to "30" OR “35":
 ```C#
@@ -129,8 +129,8 @@ WHERE City = 'New York'
 AND (Age=30 OR Age=35);
 ```
 Result:
-nkar13
 
+![sql13](https://cloud.githubusercontent.com/assets/25159667/24046330/a5a0989c-0b3b-11e7-938a-1ea79aee5ad0.JPG)
 
 You can nest as many conditions as you need.
 
@@ -153,7 +153,8 @@ OR City = 'Los Angeles'
 OR City = 'Chicago';
 ```
 Result:
-nkar 15
+
+![sql15](https://cloud.githubusercontent.com/assets/25159667/24046344/aea4af8c-0b3b-11e7-8aa0-7a9bc81eb991.JPG)
 
 ###The IN Operator
 
