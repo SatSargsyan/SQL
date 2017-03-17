@@ -25,7 +25,7 @@ WHERE ID = 7;
 ```
 ![sql2](https://cloud.githubusercontent.com/assets/25159667/24046167/12549462-0b3b-11e7-94dc-ebd69f397206.JPG)
 
-###SQL Operators
+### SQL Operators
 
 Comparison Operators and Logical Operators are used in the WHERE clause to filter the data to be selected.
 
@@ -42,7 +42,7 @@ WHERE ID != 5;
 As you can see, the record with ID=5 is excluded from the list.
 
 
-###The BETWEEN Operator
+### The BETWEEN Operator
 
 The BETWEEN operator selects values within a range. The first value must be lower bound and the second value, the upper bound.
 
@@ -59,11 +59,11 @@ WHERE ID BETWEEN 3 AND 7;
 ```
 ![sql5](https://cloud.githubusercontent.com/assets/25159667/24046176/195463fa-0b3b-11e7-8b3f-31eea3fa2acd.JPG)
 
-###Text Values
+### Text Values
 
-####When working with text columns, surround any text that appears in the statement with single quotation marks (').
+#### When working with text columns, surround any text that appears in the statement with single quotation marks (').
 
-####The following SQL statement selects all records in which the City is equal to 'New York'.
+#### The following SQL statement selects all records in which the City is equal to 'New York'.
 ```C#
 SELECT ID, FirstName, LastName, City 
 FROM customers
@@ -71,9 +71,9 @@ WHERE City = 'New York';
 ```
 ![sql6](https://cloud.githubusercontent.com/assets/25159667/24046182/20005f74-0b3b-11e7-8c7e-ca5a3ce0f844.JPG)
 
-###Logical Operators
+### Logical Operators
 
-####Logical operators can be used to combine two Boolean values and return a result of true, false, or null.
+#### Logical operators can be used to combine two Boolean values and return a result of true, false, or null.
 The following operators can be used:
 
 ![sql7](https://cloud.githubusercontent.com/assets/25159667/24046301/8a02939c-0b3b-11e7-831c-00777afa11e6.JPG)
@@ -95,7 +95,7 @@ This results in the following output:
 ![sql9](https://cloud.githubusercontent.com/assets/25159667/24046316/9ab7cfe0-0b3b-11e7-9569-fce791de3603.JPG)
 
 You can combine as many conditions as needed to return the desired results.
-###OR
+### OR
 
 If you want to select rows that satisfy at least one of the given conditions, you can use the logical OR operator.
 
@@ -111,7 +111,7 @@ WHERE City = 'New York' OR City = 'Chicago';
 Result:
 ![sql11](https://cloud.githubusercontent.com/assets/25159667/24046322/a0497db4-0b3b-11e7-9717-9fca7f4952b9.JPG)
 
-###Combining AND & OR
+### Combining AND & OR
 
 The SQL AND and OR conditions may be combined to test multiple conditions in a query. 
 These two operators are called conjunctive operators.
@@ -140,7 +140,7 @@ SELECT * FROM customers
 WHERE (id = 1 OR  id = 2)
 AND city = 'Boston'
 ```
-###The IN Operator
+### The IN Operator
 
 The IN operator is used when you want to compare a column with more than one value. 
 
@@ -156,7 +156,7 @@ Result:
 
 ![sql15](https://cloud.githubusercontent.com/assets/25159667/24046344/aea4af8c-0b3b-11e7-8aa0-7a9bc81eb991.JPG)
 
-###The IN Operator
+### The IN Operator
 
 You can achieve the same result with a single IN condition, instead of the multiple OR conditions:
 ```C#
@@ -168,7 +168,7 @@ nkar 16
 Note the use of parentheses in the syntax.
 
 
-###The NOT IN Operator
+### The NOT IN Operator
 
 The NOT IN operator allows you to exclude a list of specific values from the result set. 
 
@@ -180,7 +180,7 @@ WHERE City NOT IN ('New York', 'Los Angeles', 'Chicago');
 Result:
 nkar 17
 
-###The CONCAT Function
+### The CONCAT Function
 
 The CONCAT function is used to concatenate two or more text values and returns the concatenating string.
 
@@ -192,7 +192,7 @@ SELECT CONCAT(FirstName, ', ' , City) FROM customers;
 The output result is:
 nkar 18
 
-###The AS Keyword
+### The AS Keyword
 
 A concatenation results in a new column. The default column name will be the CONCAT function.
 You can assign a custom name to the resulting column using the AS keyword:
@@ -204,7 +204,7 @@ And when you run the query, the column name appears to be changed.
 nkar 19
 
 
-###Arithmetic Operators
+### Arithmetic Operators
 
 Arithmetic operators perform arithmetical operations on numeric operands. The Arithmetic operators include addition (+), subtraction (-), multiplication (*) and division (/). 
 
@@ -233,7 +233,7 @@ nkar 22
 
 If there are characters in the string that are not letters, this function will have no effect on them.
 
-###SQRT and AVG
+### SQRT and AVG
 
 The SQRT function returns the square root of given value in the argument.
 
@@ -298,7 +298,7 @@ nkar 26 the same
 Enclose the subquery in parentheses. 
 Also, note that there is no semicolon at the end of the subquery, as it is part of our single query.
 
-###The Like Operator
+### The Like Operator
 
 The LIKE keyword is useful when specifying a search condition within your WHERE clause.
 ```C#
@@ -326,7 +326,7 @@ nkar 28
 The % wildcard can be used multiple times within the same pattern.
 
 
-###The MIN Function
+### The MIN Function
 
 The MIN function is used to return the minimum value of an expression in a SELECT statement.
 
@@ -336,7 +336,7 @@ SELECT MIN(Salary) AS Salary FROM employees;
 
 All of the SQL functions can be combined together to create a single expression.
 
-###Types of Join
+### Types of Join
 
 The following are the types of JOIN that can be used in MySQL:
 - INNER JOIN
@@ -391,7 +391,7 @@ nkar33
 The result set contains all the rows from the left table and matching data from the right table. 
 If no match is found for a particular row, NULL is returned.
 
-###RIGHT JOIN
+### RIGHT JOIN
 
 The RIGHT JOIN returns all rows from the right table, even if there are no matches in the left table.
 nkar 34
@@ -413,7 +413,7 @@ nkar 35
 The RIGHT JOIN returns all the rows from the right table (items), even if there are no matches in the left table (customers).
 There are other types of joins in the SQL language, but they are not supported by MySQL.
 
-###Set Operation
+### Set Operation
 
 Occasionally, you might need to combine data from multiple tables into one comprehensive dataset. This may be for tables with similar data within the same database or maybe there is a need to combine similar data across databases or even across servers. 
 
@@ -452,7 +452,7 @@ SELECT FirstName, LastName, Company FROM businessContacts
 UNION
 SELECT FirstName, LastName, NULL FROM otherContacts;
 
-###UNION ALL
+### UNION ALL
 
 UNION ALL selects all rows from each table and combines them into a single table. 
 
@@ -511,7 +511,7 @@ Result:
 nkar
 The Age column for that row automatically became 0, as that is its default value.
 
-###Updating Data
+### Updating Data
 
 The UPDATE statement allows us to alter data in the table. 
 
@@ -537,7 +537,7 @@ WHERE ID=1;
 Result:
 nkar
 
-###Updating Multiple Columns
+### Updating Multiple Columns
 
 It is also possible to UPDATE multiple columns at the same time by comma-separating them:
 ``C#
@@ -549,7 +549,7 @@ Result:
 nkar
 You can specify the column order any way you like in the SET clause.
 
-Deleting Data
+### Deleting Data
 
 The DELETE statement is used to remove data from your table. DELETE queries work much like UPDATE queries.
 ```C#
@@ -567,7 +567,7 @@ If you omit the WHERE clause, all records in the table will be deleted!
 The DELETE statement removes the data from the table permanently.
 
 
-###SQL Tables
+### SQL Tables
 
 A single database can house hundreds of tables, each playing its own unique role in the database schema. 
 
@@ -576,9 +576,10 @@ SQL tables are comprised of table rows and columns. Table columns are responsibl
 The CREATE TABLE statement is used to create a new table.
 Creating a basic table involves naming the table and defining its columns and each column's data type.
 
-###Creating a Table
+### Creating a Table
 
 The basic syntax for the CREATE TABLE statement is as follows:
+```C#
 CREATE TABLE table_name
 (
 column_name1 data_type(size),
@@ -587,7 +588,7 @@ column_name3 data_type(size),
 ....
 columnN data_type(size)
 );
-
+```
 - The column_names specify the names of the columns we want to create.
 - The data_type parameter specifies what type of data the column can hold. For example, use int for whole numbers.
 - The size parameter specifies the maximum length of the table's column.
