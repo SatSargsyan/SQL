@@ -4,8 +4,7 @@ Fill in the missing keyword to list the table names.
 Show Tables
 
 
-
-###The WHERE Statement
+### The WHERE Statement
 
 The WHERE clause is used to extract only those records that fulfill a specified criterion.
 
@@ -16,30 +15,29 @@ FROM table_name
 WHERE condition;
 ```
 Consider the following table:
-nkar sql1
 
+![sql1](https://cloud.githubusercontent.com/assets/25159667/24046163/0f86e78a-0b3b-11e7-8bb1-a6460989ea13.JPG)
 
 In the above table, to SELECT a specific record:
 ```C#
 SELECT * FROM customers
 WHERE ID = 7;
 ```
-nkar sql2
+![sql2](https://cloud.githubusercontent.com/assets/25159667/24046167/12549462-0b3b-11e7-94dc-ebd69f397206.JPG)
 
 ###SQL Operators
 
 Comparison Operators and Logical Operators are used in the WHERE clause to filter the data to be selected.
 
 The following comparison operators can be used in the WHERE clause:
-
-nkar sql3
+![sql3](https://cloud.githubusercontent.com/assets/25159667/24046171/14cde7c0-0b3b-11e7-89b8-1760aba89de6.JPG)
 
 For example, we can display all customers names listed in our table, with the exception of the one with ID 5.
 ```C#
 SELECT * FROM customers
 WHERE ID != 5;
 ```
-nkar sql4
+![sql4](https://cloud.githubusercontent.com/assets/25159667/24046173/16e821c4-0b3b-11e7-8b20-39421ecb23e7.JPG)
 
 As you can see, the record with ID=5 is excluded from the list.
 
@@ -59,7 +57,7 @@ The following SQL statement selects all records with IDs that fall between 3 and
 SELECT * FROM customers 
 WHERE ID BETWEEN 3 AND 7;
 ```
-nkar sql5
+![sql5](https://cloud.githubusercontent.com/assets/25159667/24046176/195463fa-0b3b-11e7-8b3f-31eea3fa2acd.JPG)
 
 ###Text Values
 
@@ -71,7 +69,7 @@ SELECT ID, FirstName, LastName, City
 FROM customers
 WHERE City = 'New York';
 ```
-nkar sql6
+![sql6](https://cloud.githubusercontent.com/assets/25159667/24046182/20005f74-0b3b-11e7-8c7e-ca5a3ce0f844.JPG)
 
 ###Logical Operators
 
