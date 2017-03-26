@@ -701,7 +701,7 @@ Here is the result:
 
 When inserting a new record into the Users table, it's not necessary to specify a value for the id column; a unique new value will be added automatically.
 
-###ALTER TABLE
+### ALTER TABLE
 
 The ALTER TABLE command is used to add, delete, or modify columns in an existing table.
 You would also use the ALTER TABLE command to add and drop various constraints on an existing table.
@@ -715,7 +715,7 @@ nkar
 
 All rows will have the default value in the newly added column, which, in this case, is NULL.
 
-###Dropping
+### Dropping
 
 The following SQL code demonstrates how to delete the column named DateOfBirth in the People table.
 ```C#
@@ -730,7 +730,7 @@ The column, along with all of its data, will be completely removed from the tabl
 To delete the entire table, use the DROP TABLE command:
 DROP TABLE People;
 
-###Renaming
+### Renaming
 
 The ALTER TABLE command is also used to rename columns:
 ALTER TABLE People
@@ -748,7 +748,7 @@ RENAME TABLE People TO Users;
 
 This will rename the table People to Users.
 
-###Views
+### Views
 
 In SQL, a VIEW is a virtual table that is based on the result-set of an SQL statement.
 
