@@ -807,4 +807,6 @@ You can delete a view with the DROP VIEW command.
 DROP VIEW List;
 ```
 
-
+###  SQL vs SQLite
+ 	
+I would only the dispute the opinion that "SQLite integrates with your .NET application better than SQL server". [emphasis added] Both can be integrated with a .NET application though in different ways. You can define CLR classes in SQL Server and send instances of these classes between client and server. In SQlite, you can create custom UDFs in a .NET language which can be imported into SQLite
