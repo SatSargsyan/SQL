@@ -1,4 +1,4 @@
-# SQL
+# SQL Structured Query Language
 
 Fill in the missing keyword to list the table names.
 Show Tables
