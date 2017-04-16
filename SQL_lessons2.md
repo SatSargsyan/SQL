@@ -13,6 +13,7 @@ Microsoft SQL Server is non-uniform memory access (NUMA) aware, and performs wel
 [CREATE INDEX Example](https://www.w3schools.com/sql/sql_create_index.asp)
 
 [Структура индекса](https://habrahabr.ru/post/247373/)
+![index_sql](https://cloud.githubusercontent.com/assets/25159667/25070935/9d458562-22bb-11e7-9a65-6f09dd6f190c.JPG)
 
 [Indexes](https://www.tutorialspoint.com/sql/sql-indexes.htm) are special lookup tables that the database search engine can use to speed up data retrieval. Simply put, an index is a pointer to data in a table. An index in a database is very similar to an index in the back of a book.
 
