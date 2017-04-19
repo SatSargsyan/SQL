@@ -3,7 +3,13 @@
 ### [Column Aliases]()
 
 ```C#
+SELECT column_name as column_alias
+FROM table_name
 
+or
+
+SELECT column_name  column_alias /**** without as ****/
+FROM table_name
 ```
 
 ### [Using Table Aliases](https://technet.microsoft.com/en-us/library/ms187455(v=sql.105).aspx)
