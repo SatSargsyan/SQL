@@ -12,6 +12,28 @@ SELECT column_name  column_alias /**** without as ****/
 FROM table_name
 ```
 
+#### Some examples using column aliases
+
+Example1
+```C#
+SELECT firstname,lastname,age,birthdate as DateofBirth
+FROM maincontact
+```
+Example2
+```C#
+SELECT firstname,lastname,age,birthdate  DateofBirth /**** without as ****/
+FROM maincontact
+```
+Example3
+```C#
+SELECT firstname,lastname,age,birthdate as  'Date of Birth' 
+FROM maincontact
+```
+Example4
+```C#
+SELECT firstname,lastname,age,birthdate "Date of Birth"
+FROM maincontact
+```
 ### [Using Table Aliases](https://technet.microsoft.com/en-us/library/ms187455(v=sql.105).aspx)
 
 The readability of a SELECT statement can be improved by giving a table an alias, also known as a correlation name or range variable. A table alias can be assigned either with or without the AS keyword:
