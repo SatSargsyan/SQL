@@ -1,5 +1,10 @@
-### [Aliases](https://www.youtube.com/watch?v=w1F0UgsYfis)
+### [Aliases](https://www.youtube.com/watch?v=w1F0UgsYfis) are "alternate names" used for Columns and Tables.
 
+### [Column Aliases]()
+
+```C#
+
+```
 
 ### [Using Table Aliases](https://technet.microsoft.com/en-us/library/ms187455(v=sql.105).aspx)
 
