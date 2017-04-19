@@ -1,1 +1,32 @@
-[Aliases](https://www.youtube.com/watch?v=w1F0UgsYfis)
+### [Aliases](https://www.youtube.com/watch?v=w1F0UgsYfis)
+
+
+### [Using Table Aliases](https://technet.microsoft.com/en-us/library/ms187455(v=sql.105).aspx)
+
+The readability of a SELECT statement can be improved by giving a table an alias, also known as a correlation name or range variable. A table alias can be assigned either with or without the AS keyword:
+```C#
+table_name AS table alias
+
+or
+
+table_name table_alias
+```
+
+```C#
+SELECT table_alias.column_name, table_alias.column_name
+FROM table_name table_alias
+```
+
+```C#
+SELECT table_alias.column_name as column_alias
+FROM table_name table_alias
+```
+In the following example the alias c is assigned to Customer and the alias s is assigned to Store.
+
+
+```C#
+SELECT c.CustomerID, s.Name
+FROM Sales.Customer AS c
+JOIN Sales.Store AS s
+ON c.CustomerID = s.BusinessEntityID ;
+```
