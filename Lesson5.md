@@ -51,3 +51,6 @@ count(StudentID), FacultyID from Students
 group by FacultyID
 ```
 
+
+foreign key jnjelu  hamar alter table delete-ov jnjel, nor drop anel table-@
+
