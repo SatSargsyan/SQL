@@ -23,4 +23,31 @@ from[dbo].[Students]
 where  StudentID between 2 and 10
 ```
 
+```C#
+Select [StudentID], 
+FirstName+' '+LastName+' '+cast(StudentID as varchar(200))
+  as ALLName
+from[dbo].[Students]
+```
+
+```C#
+Select [StudentID], 
+FirstName+' '+LastName+' '+cast(StudentID as varchar(200))
+  as ALLName
+from[dbo].[Students]
+where FirstName like N'լի%'
+```
+
+
+```C#
+convert(varchar,StudentID)
+```
+
+convert@ nuyn castn e anum, bayc 3 argument karogh e @ndunel
+
+```C#
+Select 
+count(StudentID), FacultyID from Students
+group by FacultyID
+```
 
