@@ -54,3 +54,21 @@ group by FacultyID
 
 foreign key jnjelu  hamar alter table delete-ov jnjel, nor drop anel table-@
 
+```C#
+select count(StudentID) as SumID, [FacultyID] from Students
+Group By [FacultyID]
+having count(StudentID)>4
+```
+
+
+```C#
+select count(*)  from (
+select count(StudentID) as SumID, [FacultyID] from Students
+Group By [FacultyID] ) as nor
+where SumID>4
+```
+
+```C#
+Select *from [dbo].[Students]
+join [dbo].[Faculties]on [Students].[FacultyID]=[Faculties].FacultyID
+```
