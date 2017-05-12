@@ -72,3 +72,10 @@ where SumID>4
 Select *from [dbo].[Students]
 join [dbo].[Faculties]on [Students].[FacultyID]=[Faculties].FacultyID
 ```
+
+
+```C#
+Select Count(StudentID) as [COUNT], [Faculties].FacultyID, max(Faculties.FacultyName) as Name from 
+  Students inner join Faculties on Students.FacultyID=Faculties.FacultyID
+  Group By Faculties.FacultyID
+```
