@@ -79,3 +79,21 @@ Select Count(StudentID) as [COUNT], [Faculties].FacultyID, max(Faculties.Faculty
   Students inner join Faculties on Students.FacultyID=Faculties.FacultyID
   Group By Faculties.FacultyID
 ```
+```C#
+Select * from ( Select [FirstName],StudentID
+  from [dbo].[Students] 
+  union
+  select [LastName],StudentID
+  from [dbo].[Students]) as nor
+  order by StudentID
+ ```
+ 
+ ```C#
+ Select * from ( Select [FirstName],StudentID
+  from [dbo].[Students] 
+  union all
+  select [LastName],StudentID
+  from [dbo].[Students]) as nor
+  order by StudentID
+  ```
+
