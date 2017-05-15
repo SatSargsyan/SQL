@@ -167,3 +167,9 @@ create view Faculty_Gender_Count as
    Where GenderId=2
   Group By Faculties.FacultyID ) as agjik on agjik.FacultyID=tgha.FacultyId
  ```
+View-i het ashkhatum enq inchpes sovorakan table-i het
+
+```C#
+select * from   Faculty_Gender_Count
+```
+
