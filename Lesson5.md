@@ -99,3 +99,36 @@ Select * from ( Select [FirstName],StudentID
   order by StudentID
   ```
 
+#### 15.05.2017
+```C#
+Alter table Students add GenderID int not null default(1)
+```
+```C#
+select * from Students
+```
+
+```C#
+Select * from Students
+where GenderID=1
+```
+
+```C#
+Select count(StudentID) as a from Students
+where GenderID=2
+group by FacultyID
+```
+```C#
+--Stanal aghjikneri qanaky,FacultyID,FacultyName
+Select Count(StudentID) as [COUNT], [Faculties].FacultyID, max(Faculties.FacultyName) as Name from 
+  Students inner join Faculties on Students.FacultyID=Faculties.FacultyID
+   Where GenderId=1
+  Group By Faculties.FacultyID   --ete gender id-ov khmbavoreinq, apa max -Y skhal kberer
+  --they are same
+  select tmp.*, Faculties.FacultyName from Faculties inner join   --tmp.*-y kberi arden nor aliasi syunery
+  (
+  select [Students].FacultyID,  Count(StudentID) as st_cnt from  Students
+    where GenderId=1
+    Group By Students.FacultyID  
+  ) as tmp on Faculties.FacultyID=tmp.FacultyID
+  
+```
