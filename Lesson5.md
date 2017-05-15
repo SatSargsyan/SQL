@@ -1,6 +1,8 @@
 #
 
 ### [Create logins]()
+Security->Logins->New login->
+
 
 For writing another language, we will write    N'Անունը'
 
@@ -131,4 +133,21 @@ Select Count(StudentID) as [COUNT], [Faculties].FacultyID, max(Faculties.Faculty
     Group By Students.FacultyID  
   ) as tmp on Faculties.FacultyID=tmp.FacultyID
   
+```
+
+
+
+ #### --they  are same, bayc aranc null-i  ev isull funkciayi ognutyamb
+ ```C#
+  Select isnull(tgha.FacultyID , agjik.FacultyID) as FacultyID,
+   isnull(tgha.Name,agjik.Name) as FacultyName, tgha.COUNTTgha, agjik.COUNTAghjik from
+   (Select Count(StudentID) as [COUNTTgha], [Faculties].FacultyID, max(Faculties.FacultyName) as Name from 
+  Students inner join Faculties on Students.FacultyID=Faculties.FacultyID
+   Where GenderId=1
+  Group By Faculties.FacultyID ) as tgha 
+  full join 
+      (Select Count(StudentID) as [COUNTAghjik], [Faculties].FacultyID, max(Faculties.FacultyName) as Name from 
+  Students inner join Faculties on Students.FacultyID=Faculties.FacultyID
+   Where GenderId=2
+  Group By Faculties.FacultyID ) as agjik on agjik.FacultyID=tgha.FacultyId
 ```
