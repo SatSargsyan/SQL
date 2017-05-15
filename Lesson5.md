@@ -151,3 +151,19 @@ Select Count(StudentID) as [COUNT], [Faculties].FacultyID, max(Faculties.Faculty
    Where GenderId=2
   Group By Faculties.FacultyID ) as agjik on agjik.FacultyID=tgha.FacultyId
 ```
+
+#### creating views
+```c#
+create view Faculty_Gender_Count as
+  Select isnull(tgha.FacultyID , agjik.FacultyID) as FacultyID,
+   isnull(tgha.Name,agjik.Name) as FacultyName, tgha.COUNTTgha as MaleCount, agjik.COUNTAghjik FemaleCount from
+   (Select Count(StudentID) as [COUNTTgha], [Faculties].FacultyID, max(Faculties.FacultyName) as Name from 
+  Students inner join Faculties on Students.FacultyID=Faculties.FacultyID
+   Where GenderId=1
+  Group By Faculties.FacultyID ) as tgha 
+  full join 
+      (Select Count(StudentID) as [COUNTAghjik], [Faculties].FacultyID, max(Faculties.FacultyName) as Name from 
+  Students inner join Faculties on Students.FacultyID=Faculties.FacultyID
+   Where GenderId=2
+  Group By Faculties.FacultyID ) as agjik on agjik.FacultyID=tgha.FacultyId
+ ```
