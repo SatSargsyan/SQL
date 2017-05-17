@@ -173,3 +173,43 @@ View-i het ashkhatum enq inchpes sovorakan table-i het
 select * from   Faculty_Gender_Count
 ```
 
+### PROCEDURE VS FUNCTION
+
+```c#
+alter proc INS_Students
+@StudentID int null,
+ @FirstName nvarchar(100), 
+ @LastName nvarchar(100),
+  @Email nvarchar(100),
+   @Tel_number nvarchar(100), 
+   @Birt_of_date date, 
+   @Resume nvarchar(max), 
+   @FacultyID int, 
+   @Address nvarchar(100),
+    @GenderID int  
+	as
+	begin
+	if (@studentID is null)
+	begin
+	insert into [dbo].[Students]( FirstName, LastName, Email, Tel_number, Birt_of_date, [Resume], FacultyID, [Address], GenderID)
+	values ( @FirstName, @LastName, @Email, @Tel_number, @Birt_of_date, @Resume, @FacultyID, @Address, @GenderID)
+	select * from Students where StudentID=scope_identity()
+	end 
+	else
+	begin
+	update Students set
+	FirstName=isnull(@FirstName,FirstName),
+	 LastName=isnull(@LastName, LastName),
+	 Email=isnull(@Email, Email),
+	 Tel_number=isnull(@Tel_number,Tel_number),
+	  Birt_of_date=isnull(@Birt_of_date,Birt_of_date),
+	   [Resume]=isnull(@Resume, [Resume]),
+	   FacultyID=isnull(@FacultyID,FacultyID),
+	    [Address]=isnull(@Address,[Address]),
+		 GenderID=isnull(@GenderID,GenderID)
+		 where StudentID=@StudentID
+		 end
+		 select * from Students where StudentID=@StudentID
+	end
+
+```
