@@ -213,3 +213,70 @@ alter proc INS_Students
 	end
 
 ```
+
+
+procedure-n aveli layn hnaravorutyunner uni, qan function-y. So that prosedure-i mej karogh enq func ogtagortsel, bayc func-i mej proc chenq karogh
+
+select-i mej func karogh enq grel, proc voch
+
+proc-y execute e linum
+
+exist-y result set e veradardznum
+
+```C#
+create function  FN_AGECALC(@DATE date)
+returns int
+as
+begin
+declare @res int
+set @res=YEAR(getdate())-YEAR(@DATE)
+return @res
+end
+
+
+-------------------------------------------------Ashkhatacnenq func-y
+select dbo.FN_AGECALC(GETDATE()) as AgeFunc
+----------------------------------------------------
+--gtnenq mer students-ic ogtagortselov mer grats func-y
+select FirstName,LastName, dbo.FN_AGECALC([Birt_of_date]) as Age  from Students
+---------------------------------------------------
+declare @var int 
+set @var=1
+
+print @var
+--they are same
+declare @var int 
+select @var=1
+
+print @var
+------------------------------------------------------------------------------
+--selectn ayn aravelutyunn uni set-ic, vor  karogh enq naev nshel vor table-ic ev naev payman
+
+declare @var int 
+set @var=FacultyID from students --where StudentID=4
+
+print @var
+
+
+
+
+
+create function  FN_concat(@facultyId int)
+returns nvarchar(max)
+as
+begin
+declare @firstname nvarchar(max)=''
+Select @firstname+=' ,'+[FirstName] from [dbo].[Students] where [FacultyID]=@facultyId
+return @firstname
+end
+
+
+select [FacultyID],[FacultyName],dbo.FN_concat(FacultyID) as names from Faculties
+```
+
+
+### [Triggers](https://docs.microsoft.com/en-us/sql/t-sql/statements/create-trigger-transact-sql)
+```C#
+
+
+```
