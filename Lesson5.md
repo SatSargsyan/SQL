@@ -277,6 +277,59 @@ select [FacultyID],[FacultyName],dbo.FN_concat(FacultyID) as names from Facultie
 
 ### [Triggers](https://docs.microsoft.com/en-us/sql/t-sql/statements/create-trigger-transact-sql)
 ```C#
+create trigger INS_Check
+on [dbo].[Students]
+after insert
+as
+begin
+select * from inserted
+end
 
+
+
+
+insert into [dbo].[Students]
+([FirstName],[LastName],[FacultyID],[GenderID])
+values
+('karen','Tovmasyan',1,1),
+('Liana','Tovmasyan',1,2),
+('karen','Tovmasyan',1,1),
+('Liana','Tovmasyan',1,2),
+('karen','Tovmasyan',1,1),
+('Liana','Tovmasyan',1,2),
+('karen','Tovmasyan',1,1),
+('Liana','Tovmasyan',1,2),
+('karen','Tovmasyan',1,1),
+('Liana','Tovmasyan',1,2),
+('karen','Tovmasyan',1,1),
+('Liana','Tovmasyan',1,2),
+('karen','Tovmasyan',1,1),
+('Liana','Tovmasyan',1,2)
+
+
+
+--------------------------------------------------------------
+create trigger INS_Limited
+on [dbo].[Students]
+after insert
+as
+begin 
+if exists (select 1 /* count(*)  */ from Students 
+	where [FacultyID] in (select  [FacultyID] from inserted)
+	group by  FacultyID
+	having count(*)>10)  
+	begin
+	Rollback
+	end
+end
 
 ```
+
+After that chi toghni, ete pordzenq avelacnel, kta hetevyal errorY
+```C#
+
+(14 row(s) affected)
+Msg 3609, Level 16, State 1, Line 63
+The transaction ended in the trigger. The batch has been aborted.
+```
+
