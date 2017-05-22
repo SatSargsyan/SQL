@@ -370,6 +370,6 @@ u miayn mek clustered index karogh e unenal, hgum chi parunakum, henc nuyn tabli
 ### [Transactions](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/transactions-transact-sql)
 
 
-ACID
+[ACID](https://msdn.microsoft.com/en-us/library/aa480356.aspx)
 
 
