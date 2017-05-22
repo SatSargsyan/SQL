@@ -260,7 +260,6 @@ print @var
 
 
 
-
 create function  FN_concat(@facultyId int)
 returns nvarchar(max)
 as
@@ -354,6 +353,17 @@ order by StudentID desc offset  @off rows fetch next @next rows only
 ```C#
 select *, count(*) over(partition by FacultyID)from Students
 ```
+
+
+
+
+### Index
+amen inch bajanum e 8kb-oc ejeri
+
+[Clustered index](https://docs.microsoft.com/en-us/sql/relational-databases/indexes/clustered-and-nonclustered-indexes-described)
+
+primary key clustered index e sarqum,
+u miayn mek clustered index karogh e unenal, hgum chi parunakum, henc nuyn tabli mej e sarqum
 
 
 
