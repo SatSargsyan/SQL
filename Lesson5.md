@@ -333,3 +333,28 @@ Msg 3609, Level 16, State 1, Line 63
 The transaction ended in the trigger. The batch has been aborted.
 ```
 
+### Check constrait
+
+### Unique constrait 
+Unique-y tuyl e talis null, i tarberutyun primary key-i
+
+Cascading
+
+```C#
+Select *from Students
+order by StudentID desc offset 5 rows fetch next 5 rows only
+------------------------------------------------------------
+declare @off int=6, @next int =5
+Select *from Students
+order by StudentID desc offset  @off rows fetch next @next rows only
+```
+
+### Window functions
+
+```C#
+select *, count(*) over(partition by FacultyID)from Students
+```
+
+
+
+
