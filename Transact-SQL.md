@@ -88,3 +88,5 @@ WHERE s.Name = ANY
 
 ### [Comparing queries by using EXISTS and IN](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/exists-transact-sql)
 
+### [EXCEPT and INTERSECT](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/set-operators-except-and-intersect-transact-sql) 
+
