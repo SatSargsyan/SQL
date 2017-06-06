@@ -221,8 +221,10 @@ select-i mej func karogh enq grel, proc voch
 
 proc-y execute e linum
 
+### [Exists transact-sql](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/exists-transact-sql)
 [Exists](https://www.techonthenet.com/sql/exists.php)-y result set e veradardznum
-
+[Exists Examples](https://www.w3schools.com/sql/sql_exists.asp)
+[Exists examples](http://www.dofactory.com/sql/where-exists)
 ```C#
 create function  FN_AGECALC(@DATE date)
 returns int
