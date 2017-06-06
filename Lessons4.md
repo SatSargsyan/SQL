@@ -7,3 +7,6 @@ One-to-One
 
 #### Many to  many
 3  table
+
+
+### [Order By for **2 columns**](https://www.techonthenet.com/sql/order_by.php)
