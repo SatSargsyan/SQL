@@ -67,3 +67,24 @@ ELSE
 PRINT 'FALSE' ;  
 ```
 ## [Exists]()
+
+### [Comparing queries by using EXISTS and = ANY](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/exists-transact-sql)
+```C#
+SELECT DISTINCT s.Name  
+FROM Sales.Store AS s   
+WHERE EXISTS  
+(SELECT *  
+    FROM Purchasing.Vendor AS v  
+    WHERE s.Name = v.Name) ;  
+```
+The same query usin =any
+```C#
+SELECT DISTINCT s.Name  
+FROM Sales.Store AS s   
+WHERE s.Name = ANY  
+(SELECT v.Name  
+    FROM Purchasing.Vendor AS v ) ;  
+``` 
+
+### [Comparing queries by using EXISTS and IN](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/exists-transact-sql)
+
