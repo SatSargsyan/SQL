@@ -221,7 +221,7 @@ select-i mej func karogh enq grel, proc voch
 
 proc-y execute e linum
 
-exist-y result set e veradardznum
+[Exists](https://www.techonthenet.com/sql/exists.php)-y result set e veradardznum
 
 ```C#
 create function  FN_AGECALC(@DATE date)
@@ -332,7 +332,8 @@ Msg 3609, Level 16, State 1, Line 63
 The transaction ended in the trigger. The batch has been aborted.
 ```
 
-### Check constrait
+### [Check constrait]()
+### [Unique and check](https://docs.microsoft.com/en-us/sql/relational-databases/tables/unique-constraints-and-check-constraints)
 
 ### Unique constrait 
 Unique-y tuyl e talis null, i tarberutyun primary key-i
