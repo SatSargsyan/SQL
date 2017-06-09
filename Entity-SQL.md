@@ -1,6 +1,6 @@
 #
 ## [ORDER BY](https://msdn.microsoft.com/en-us/library/bb399723(v=vs.110).aspx)
-####Ordering Nested Queries
+#### Ordering Nested Queries
 In the Entity Framework, a nested expression can be placed anywhere in the query; the order of a nested query is not preserved.
 ```C#
 -- The following query will order the results by the last name.  
