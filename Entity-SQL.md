@@ -54,6 +54,8 @@ The same we can do using lambda expression
 ```C#
 dataGridView1.DataSource = new Phones().OrderByDescending(a => a.Name).ThenByDescending(a => a.ID).ToList();
 ```
+
+### Another way
 ```C#
 qqq.OrderBy(x => new { x.Col1, x.Col2} )
 ```
