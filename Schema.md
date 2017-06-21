@@ -5,6 +5,16 @@ Say you have been issued a database username and password by the database admini
 
 The good thing about schemas is that when you access a table that you own (in your own schema), you do not have to refer to the schema name. For instance, you could refer to your table as either one of the following:
 
+
+#### If we are not define our **own schema**, by default it's **dbo schema**
+```C3
+...
+use[DB_name],
+GO
+IF SCHEMA_ID(N'dbo') is null execute(N'CREATE SCHEMA[dbo]');
+GO
+```
+
 ### [CREATE SCHEMA](https://docs.microsoft.com/en-us/sql/t-sql/statements/create-schema-transact-sql) 
 
 ### [DROP SCHEMA ](https://docs.microsoft.com/en-us/sql/t-sql/statements/drop-schema-transact-sql)
